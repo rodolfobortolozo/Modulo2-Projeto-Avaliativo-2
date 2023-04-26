@@ -27,4 +27,5 @@ public class PatientRequest extends PersonRequest{
 
   private Address address;
 
+  private String idAddress;
 }

@@ -5,7 +5,9 @@ import br.com.labmedicine.labmedical.dto.response.PatientResponse;
 import br.com.labmedicine.labmedical.exceptions.PatientConflitExeception;
 import br.com.labmedicine.labmedical.exceptions.PatientNotFoundExeception;
 import br.com.labmedicine.labmedical.exceptions.UserExeception;
+import br.com.labmedicine.labmedical.helpers.IsValidAddress;
 import br.com.labmedicine.labmedical.mappers.PatientMapper;
+import br.com.labmedicine.labmedical.models.Address;
 import br.com.labmedicine.labmedical.repositories.ConsultRepository;
 import br.com.labmedicine.labmedical.repositories.ExamRepository;
 import br.com.labmedicine.labmedical.repositories.PatientRepository;
@@ -24,12 +26,15 @@ public class PatientService {
   private final ExamRepository examRepository;
   private final ConsultRepository consultRepository;
 
+  private final IsValidAddress isValidAddress;
+
   private String MSG_NOT_FOUND = "Nenhum Registro Encontrado com o id: ";
 
-  public PatientService(PatientRepository patientRepository, ExamRepository examRepository, ConsultRepository consultRepository) {
+  public PatientService(PatientRepository patientRepository, ExamRepository examRepository, ConsultRepository consultRepository, IsValidAddress isValidAddress) {
     this.patientRepository = patientRepository;
     this.examRepository = examRepository;
     this.consultRepository = consultRepository;
+    this.isValidAddress = isValidAddress;
   }
 
   public ResponseEntity<Object> getAll(){
@@ -49,6 +54,12 @@ public class PatientService {
     });
 
     Patient patient = PatientMapper.INSTANCE.reqtoPatient(patientRequest);
+
+    if(patientRequest.getIdAddress() !=null){
+      Address address = isValidAddress.isValid(patientRequest.getIdAddress());
+      patient.setAddress(address);
+    }
+
     Patient newPatient = this.patientRepository.save(patient);
 
     return ResponseEntity.status(HttpStatus.CREATED).body(PatientMapper.INSTANCE.patientToPatResponse(newPatient));

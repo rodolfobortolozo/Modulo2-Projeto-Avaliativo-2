@@ -1,5 +1,6 @@
 package br.com.labmedicine.labmedical.dto.response;
 
+import br.com.labmedicine.labmedical.models.Patient;
 import lombok.Data;
 
 @Data
@@ -22,5 +23,7 @@ public class AddressResponse {
   private String district;
 
   private String landmark;
+
+  private Patient patient;
 
 }
