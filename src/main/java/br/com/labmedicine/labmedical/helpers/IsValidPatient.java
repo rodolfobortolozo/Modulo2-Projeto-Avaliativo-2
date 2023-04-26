@@ -18,7 +18,7 @@ public class IsValidPatient {
   /**
    *  Verifica se Existe o Paciente Cadastrado
    * @param id
-   * @return User
+   * @return Patient
    */
 
   public Patient isValid(String id) {
