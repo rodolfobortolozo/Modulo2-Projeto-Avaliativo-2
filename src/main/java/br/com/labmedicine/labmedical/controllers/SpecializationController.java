@@ -19,6 +19,12 @@ public class SpecializationController {
         this.specializationService = specializationService;
     }
 
+    @GetMapping
+    public ResponseEntity<Object> getAll(){
+
+        return this.specializationService.getAll();
+    }
+
     @PostMapping
     public ResponseEntity<SpecializationResponse> saveSpecialization(@RequestBody SpecializationRequest specializationRequest){
 
@@ -26,14 +32,8 @@ public class SpecializationController {
 
     }
 
-    @GetMapping
-    public ResponseEntity<Object> getAll(){
-
-        return this.specializationService.getAll();
-    }
-
     @GetMapping(path = "/{id}")
-    public ResponseEntity<Optional<SpecializationResponse>> getById(@PathVariable(name = "id")String id){
+    public ResponseEntity<Optional<SpecializationResponse>> getBySpecializationId(@PathVariable(name = "id")String id){
 
         return this.specializationService.getById(id);
     }
