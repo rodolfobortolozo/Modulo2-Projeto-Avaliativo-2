@@ -96,7 +96,7 @@ public class PatientService {
             .map( user -> {
 
               this.patientRepository.deleteById(user.getId());
-              return ResponseEntity.status(HttpStatus.OK).body(null);
+              return ResponseEntity.status(HttpStatus.NO_CONTENT).body(null);
 
             }).orElseThrow(() -> new PatientNotFoundExeception(MSG_NOT_FOUND+id));
 

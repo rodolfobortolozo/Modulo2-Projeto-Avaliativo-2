@@ -97,7 +97,7 @@ public class UserService {
             .map( user -> {
 
               this.userRepository.deleteById(user.getId());
-              return ResponseEntity.status(HttpStatus.OK).body(null);
+              return ResponseEntity.status(HttpStatus.NO_CONTENT).body(null);
 
             }).orElseThrow(() -> new UserNotFoundExeception(MSG_NOT_FOUND +id));
 

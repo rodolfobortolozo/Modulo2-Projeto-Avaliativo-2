@@ -96,7 +96,7 @@ public class ConsultService {
             .map( consult -> {
 
               this.consultRepository.deleteById(consult.getId());
-              return ResponseEntity.status(HttpStatus.OK).body(null);
+              return ResponseEntity.status(HttpStatus.NO_CONTENT).body(null);
 
             }).orElseThrow(() -> new ConsultExeception("Nenhum Registro Encontrado."));
 

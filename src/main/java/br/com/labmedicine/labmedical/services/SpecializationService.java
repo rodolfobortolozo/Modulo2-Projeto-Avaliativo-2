@@ -71,7 +71,7 @@ public class SpecializationService {
               .map( specialization -> {
 
                 this.specializationRepository.deleteById(specialization.getId());
-                return ResponseEntity.status(HttpStatus.OK).body(null);
+                return ResponseEntity.status(HttpStatus.NO_CONTENT).body(null);
 
               }).orElseThrow(() -> new SpecializationNotFoundExeception("Nenhum Registro Encontrado."));
 
