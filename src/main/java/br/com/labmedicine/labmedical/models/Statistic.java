@@ -1,21 +1,30 @@
 package br.com.labmedicine.labmedical.models;
 
-import jakarta.persistence.EnumType;
-import jakarta.persistence.Enumerated;
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
+import org.hibernate.annotations.Immutable;
 
 import java.util.Date;
 
+@Entity
+@Table(name = "V_STATISTICS")
+@Immutable
 @Data
 @AllArgsConstructor
+@NoArgsConstructor
 public class Statistic {
 
+    @Id
     @Enumerated(EnumType.STRING)
+    @Column(name = "TYPE")
     private TypeStatistic type;
 
+    @Column(name = "VALUE")
     private Long value;
 
-    private Date dtaCreated;
+    @Column(name = "LASTCREATED")
+    private Date lastCreated;
 
 }
