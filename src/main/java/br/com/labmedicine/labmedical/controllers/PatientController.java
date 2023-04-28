@@ -50,4 +50,10 @@ public class PatientController {
 
     return this.patientService.deleteById(id);
   }
+
+  @GetMapping(path = "/" )
+  public ResponseEntity<Optional<PatientResponse>> getPatientbyName(@RequestParam(name = "name") String name){
+
+    return this.patientService.getByName(name);
+  }
 }

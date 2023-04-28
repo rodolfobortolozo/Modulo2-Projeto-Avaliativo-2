@@ -19,13 +19,10 @@ import java.util.Optional;
 public class AddressService {
 
   private final AddressRepository addressRepository;
-  private final IsValidUser isValidUser;
-  private final IsValidPatient isValidPatient;
 
-  public AddressService(AddressRepository addressRepository, IsValidUser isValidUser, IsValidPatient isValidPatient) {
+  public AddressService(AddressRepository addressRepository) {
     this.addressRepository = addressRepository;
-    this.isValidUser = isValidUser;
-    this.isValidPatient = isValidPatient;
+
   }
 
   public ResponseEntity<Object> getAll(){

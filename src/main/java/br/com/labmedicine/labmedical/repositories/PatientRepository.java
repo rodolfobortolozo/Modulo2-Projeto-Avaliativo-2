@@ -8,4 +8,6 @@ import java.util.Optional;
 public interface PatientRepository extends JpaRepository<Patient, String> {
 
   Optional<Patient> findByCpf(String cpf);
+
+  Optional<Patient> findByNameIgnoreCase(String name);
 }

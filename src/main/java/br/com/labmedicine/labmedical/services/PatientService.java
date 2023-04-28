@@ -113,4 +113,16 @@ public class PatientService {
 
   }
 
+  public ResponseEntity<Optional<PatientResponse>> getByName(String name){
+
+    return ResponseEntity.status(HttpStatus.OK).body(
+            Optional.ofNullable(
+                    this.patientRepository.findByNameIgnoreCase(name)
+                            .map(PatientMapper.INSTANCE::patientToPatResponse)
+                            .orElseThrow(() -> new PatientNotFoundExeception("Nenhum registro encontrado com o nome: "+name))
+            )
+    );
+
+  }
+
 }

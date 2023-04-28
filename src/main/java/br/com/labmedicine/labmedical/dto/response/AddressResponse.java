@@ -24,6 +24,6 @@ public class AddressResponse {
 
   private String landmark;
 
-  private Patient patient;
+  private PatientResSimple patient;
 
 }
