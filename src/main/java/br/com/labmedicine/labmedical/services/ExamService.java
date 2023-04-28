@@ -15,6 +15,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.List;
 import java.util.Optional;
 
 @Service
@@ -51,12 +52,12 @@ public class ExamService {
     exam.setUser(user);
     Exam newExam = this.examRepository.save(exam);
 
-    return ResponseEntity.status(HttpStatus.OK).body(ExamMapper.INSTANCE.examToExamResponse(newExam));
+    return ResponseEntity.status(HttpStatus.CREATED).body(ExamMapper.INSTANCE.examToExamResponse(newExam));
   }
 
   public ResponseEntity<Optional<ExamResponse>> getById(String id){
 
-    return ResponseEntity.status(HttpStatus.CREATED).body(
+    return ResponseEntity.status(HttpStatus.OK).body(
             Optional.ofNullable(
                     this.examRepository.findById(id)
                             .map(ExamMapper.INSTANCE::examToExamResponse)
@@ -101,6 +102,16 @@ public class ExamService {
               return ResponseEntity.status(HttpStatus.NO_CONTENT).body(null);
 
             }).orElseThrow(() -> new ConsultExeception("Nenhum Registro Encontrado."));
+
+  }
+
+  public ResponseEntity<List<ExamResponse>> getByPatientId(String id){
+
+    isValidPatient.isValid(id);
+
+    return ResponseEntity.status(HttpStatus.OK).body(
+                    this.examRepository.findByPatientId(id).stream()
+                            .map(ExamMapper.INSTANCE::examToExamResponse).toList());
 
   }
 }

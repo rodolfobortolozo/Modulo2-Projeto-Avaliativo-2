@@ -1,15 +1,12 @@
 package br.com.labmedicine.labmedical.controllers;
 
-import br.com.labmedicine.labmedical.dto.request.ConsultRequest;
 import br.com.labmedicine.labmedical.dto.request.ExamRequest;
-import br.com.labmedicine.labmedical.dto.response.ConsultResponse;
 import br.com.labmedicine.labmedical.dto.response.ExamResponse;
-import br.com.labmedicine.labmedical.services.ConsultService;
 import br.com.labmedicine.labmedical.services.ExamService;
-import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
 import java.util.Optional;
 
 @RestController
@@ -51,5 +48,11 @@ public class ExamController {
   public ResponseEntity<Object> deleteConsult(@PathVariable(name = "id") String id){
 
     return this.examService.deleteById(id);
+  }
+
+  @GetMapping(path = "/{id}/pacientes")
+  public ResponseEntity<List<ExamResponse>> getPatientbyId(@PathVariable(name = "id") String id){
+
+    return this.examService.getByPatientId(id);
   }
 }
