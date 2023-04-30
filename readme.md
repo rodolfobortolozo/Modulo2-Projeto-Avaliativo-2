@@ -28,6 +28,11 @@ MapStruct
 DevTools
 Validation
 ```
+
+## **Scripts**
+
+Todo script para criação do banco de dados se encontra na pasta **resources/db/migration**
+
 ## **Métodos**
 Requisições para a API devem seguir os padrões:
 | Método | Descrição |
