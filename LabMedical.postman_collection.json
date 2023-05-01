@@ -1,0 +1,887 @@
+{
+	"info": {
+		"_postman_id": "648b505f-8c45-443c-a3e5-88a22d41e048",
+		"name": "LabMedical",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "22531782"
+	},
+	"item": [
+		{
+			"name": "01 - Especialidades Médicas",
+			"item": [
+				{
+					"name": "Todos",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/especialidades",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"especialidades"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Cadastrar",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"specialization\" : \"Ortopedia\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/especialidades",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"especialidades"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Buscar por id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/especialidades/da91d4b9-c92b-44c6-b09e-b3a6cab0ec1c",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"especialidades",
+								"da91d4b9-c92b-44c6-b09e-b3a6cab0ec1c"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Atualizar",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n        \"specialization\": \"ASDASDASDASDA\"\r\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/especialidades/da91d4b9-c92b-44c6-b09e-b3a6cab0ec1c",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"especialidades",
+								"da91d4b9-c92b-44c6-b09e-b3a6cab0ec1c"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Deletar",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n        \"id\": \"5\",\r\n        \"specialization\": \"teste 123123\",\r\n        \"dtaCreated\": \"2023-04-20T00:25:53.000+00:00\",\r\n        \"dtaUpdated\": \"2023-04-20T00:25:53.000+00:00\"\r\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/especialidades/eb67d96e-37c4-4c0c-9a75-82be78f11b3f",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"especialidades",
+								"eb67d96e-37c4-4c0c-9a75-82be78f11b3f"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"description": "Cadastro de Especialidades Médicas\n\nClínico Geral  \nAnestesista  \nDermatologia  \nGinecologia  \nNeurologia  \nPediatria  \nPsiquiatria  \nOrtopedia"
+		},
+		{
+			"name": "02 - Médicos",
+			"item": [
+				{
+					"name": "Todos",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/usuarios",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"usuarios"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Cadastrar Médico",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"name\": \"Flavia Silva\",\r\n  \"gender\": \"Masculino\",\r\n  \"bithhDay\": \"03/11/1980\",\r\n  \"cpf\": \"69215325930\",\r\n  \"rg\": \"357258456-0\",\r\n  \"maritalStatus\": \"DIVORCIADO\",\r\n  \"phoneNumber\": \"1799999999\",\r\n  \"email\": \"roodlfo@teste.com\",\r\n  \"naturalness\": \"São Paulo\",\r\n  \"crm\": \"8529-SP\",\r\n  \"password\": \"3333#Ab!\",\r\n  \"specializations\": [\r\n    {\r\n      \"id\": \"f9efa743-27a0-44d0-a099-0559f81958ee\"\r\n    },\r\n    {\r\n      \"id\": \"b7cfb890-c6ab-42d6-8798-239e39e4ffe5\"\r\n    }\r\n\r\n  ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/usuarios",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"usuarios"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Buscar Médico por id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/usuarios/ba2e6008-5a56-465e-90fc-eb13295a34ca",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"usuarios",
+								"ba2e6008-5a56-465e-90fc-eb13295a34ca"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Alterar Médico",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"name\": \"Rodolfo Rodriges Bortolozo\",\r\n  \"gender\": \"Masculino\",\r\n  \"bithhDay\": \"03/04/1989\",\r\n  \"cpf\": \"36681716881\",\r\n  \"rg\": \"666666666666\",\r\n  \"maritalStatus\": \"CASADO\",\r\n  \"phoneNumber\": \"1799999999\",\r\n  \"email\": \"rodolfo@teste.com\",\r\n  \"naturalness\": \"FERPA\",\r\n  \"crm\": \"1234-SS\",\r\n  \"password\": \"asd123qwe\",\r\n  \"specializations\": [\r\n    {\r\n      \"id\": \"cd163d41-c35f-45ff-b373-2e9c951e6852\"\r\n    }\r\n  ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/usuarios/ba2e6008-5a56-465e-90fc-eb13295a34ca",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"usuarios",
+								"ba2e6008-5a56-465e-90fc-eb13295a34ca"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Alterar Senha",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"password\": \"7895#Ab!\",\r\n  \"newPassword\": \"1234567890\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/usuarios/377e2147-e732-4cbb-9a9f-ca7e7ae631ca/senha",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"usuarios",
+								"377e2147-e732-4cbb-9a9f-ca7e7ae631ca",
+								"senha"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Deletar Médico",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/usuarios/f6edb4c0-76c7-4113-9ea2-83e8fb849ae8",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"usuarios",
+								"f6edb4c0-76c7-4113-9ea2-83e8fb849ae8"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "03 - Pacientes",
+			"item": [
+				{
+					"name": "Todos",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/pacientes",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"pacientes"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Cadastrar Paciente",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Lorena Poli\",\r\n    \"gender\" : \"Feminino\",\r\n    \"bithhDay\": \"15/03/2015\",\r\n    \"cpf\": \"74841186301\",\r\n    \"rg\": \"852963741\",\r\n    \"maritalStatus\": \"SOLTEIRO\",\r\n    \"phoneNumber\": \"13385646847\",\r\n    \"email\": \"antoniodasilva@teste.com\",\r\n    \"naturalness\": \"Fernandópolis\",\r\n    \"phoneEmergency\": \"1799999999\",\r\n    \"agreement\": \"UNIMED\",\r\n    \"agreementNumber\": \"1255-0\",\r\n    \"agreementValidity\" : \"01/01/2050\",\r\n    \"allergies\": \r\n    [\r\n      {\r\n        \"allergy\": \"Soja\"\r\n      }\r\n      ],\r\n    \"cautionLists\":\r\n    [\r\n      {\r\n        \"caution\": \"Repouso\"\r\n      }\r\n      ],\r\n    \"address\": {\r\n        \"zipCode\":\"15748000\",\r\n        \"city\":\"Fernandópolis\",\r\n        \"country\":\"Brasil\",\r\n        \"publicPlace\":\"Rua 3\",\r\n        \"houseNumber\":\"0011\",\r\n        \"complement\":\"casa verde\",\r\n        \"district\":\"centro\",\r\n        \"landmark\":null\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/pacientes",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"pacientes"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Cadastrar Paciente com Id do Endereço",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Teste\",\r\n    \"gender\" : \"Masculino\",\r\n    \"bithhDay\": \"03/04/1989\",\r\n    \"cpf\": \"39543338302\",\r\n    \"rg\": \"2345\",\r\n    \"maritalStatus\": \"DIVORCIADO\",\r\n    \"phoneNumber\": \"1799999999\",\r\n    \"email\": \"rodolfo@teste.com\",\r\n    \"naturalness\": \"FERPA\",\r\n    \"phoneEmergency\": \"1234566\",\r\n    \"agreement\": \"UNIMED\",\r\n    \"agreementNumber\": \"55555\",\r\n    \"agreementValidity\" : \"01/01/2050\",\r\n    \"allergies\": \r\n    [\r\n      {\r\n        \"allergy\": \"asdasd\"\r\n      }\r\n      ],\r\n    \"cautionLists\":\r\n    [\r\n      {\r\n        \"caution\": \"sssss\"\r\n      }\r\n      ],\r\n    \"idAddress\": \"7f85e3c9-4538-4c9a-8895-11211b10e35d\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/pacientes",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"pacientes"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Buscar por id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/pacientes/136d511b-8641-4e57-bcfa-9bc1351cd025",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"pacientes",
+								"136d511b-8641-4e57-bcfa-9bc1351cd025"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Buscar pelo nome",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/pacientes/?name=Jose da Silva Santos",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"pacientes",
+								""
+							],
+							"query": [
+								{
+									"key": "name",
+									"value": "Jose da Silva Santos"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Alterar",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"id\": \"136d511b-8641-4e57-bcfa-9bc1351cd025\",\r\n  \"name\": \"Jose da Silva\",\r\n  \"gender\": \"Masculino\",\r\n  \"bithhDay\": \"03/01/1989\",\r\n  \"cpf\": \"77784671350\",\r\n  \"rg\": \"99999999\",\r\n  \"maritalStatus\": \"CASADO\",\r\n  \"phoneNumber\": \"13385646847\",\r\n  \"email\": \"josedasilva@teste.com\",\r\n  \"naturalness\": \"Jales\",\r\n  \"dtaCreated\": \"30/04/2023 21:58:51\",\r\n  \"dtaUpdated\": \"30/04/2023 21:58:51\",\r\n  \"phoneEmergency\": \"179999999\",\r\n  \"agreement\": \"unimed\",\r\n  \"agreementNumber\": \"656552\",\r\n  \"agreementValidity\": \"14/05/2024\",\r\n  \"allergies\": [\r\n    {\r\n      \"id\": \"ad2ec56f-f5ab-4724-a824-afd1d271525c\",\r\n      \"allergy\": \"Leite\",\r\n      \"dtaCreated\": \"30/04/2023 21:58:51\",\r\n      \"dtaUpdated\": \"30/04/2023 21:58:51\"\r\n    }\r\n  ],\r\n  \"cautionLists\": [\r\n    {\r\n      \"id\": \"a2f6257e-0a8b-4cef-b528-6180a5ff070b\",\r\n      \"caution\": \"Repouso\",\r\n      \"dtaCreated\": \"30/04/2023 21:58:51\",\r\n      \"dtaUpdated\": \"30/04/2023 21:58:51\"\r\n    }\r\n  ],\r\n  \"address\": {\r\n    \"id\": \"672f5fa4-d6ce-4445-9cdf-7c6e4ad91f5a\",\r\n    \"zipCode\": \"15748000\",\r\n    \"city\": \"Mesópolis\",\r\n    \"country\": \"Brasil\",\r\n    \"publicPlace\": \"Rua 3\",\r\n    \"houseNumber\": \"0011\",\r\n    \"complement\": \"casa verde\",\r\n    \"district\": \"centro\",\r\n    \"landmark\": null\r\n  }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/pacientes/136d511b-8641-4e57-bcfa-9bc1351cd025",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"pacientes",
+								"136d511b-8641-4e57-bcfa-9bc1351cd025"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Deletar",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/pacientes/70345fa3-199f-4374-8885-f77b3ea65212",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"pacientes",
+								"70345fa3-199f-4374-8885-f77b3ea65212"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "04 - Consultas",
+			"item": [
+				{
+					"name": "Todas Consultas",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/consultas",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"consultas"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Cadastrar",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"motive\": \"Gripe\",\r\n  \"dtaHourConsult\": \"01/01/2023 18:55:45\",\r\n  \"description\": \"Nariz Entupido\",\r\n  \"medication\": \"neusa\",\r\n  \"precautions\": \"descansar\",\r\n  \"iddoctor\": \"5aea1883-c22d-4d03-8b91-73dc007d2918\",\r\n  \"idpatient\": \"70345fa3-199f-4374-8885-f77b3ea65212\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/consultas",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"consultas"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Buscar por id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/consultas/6t48e4e6-8e7b-4b49-b833-f66ae430b2bd",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"consultas",
+								"6t48e4e6-8e7b-4b49-b833-f66ae430b2bd"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Alterar Consulta",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"motive\": \"Gripe\",\r\n  \"dtaHourConsult\": \"01/01/2023 18:55:45\",\r\n  \"description\": \"Nariz Entupido 1111111\",\r\n  \"medication\": \"neusa asdadas\",\r\n  \"precautions\": \"descansar asdadas\",\r\n  \"iddoctor\": \"5aea1883-c22d-4d03-8b91-73dc007d2918\",\r\n  \"idpatient\": \"70345fa3-199f-4374-8885-f77b3ea65212\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/consult/6t48e4e6-8e7b-4b49-b833-f66ae430b2bd",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"consult",
+								"6t48e4e6-8e7b-4b49-b833-f66ae430b2bd"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Deletar",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/consult/a8b6b8bd-41b2-4f68-877c-94fd9e9a4610",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"consult",
+								"a8b6b8bd-41b2-4f68-877c-94fd9e9a4610"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "05 - Exames",
+			"item": [
+				{
+					"name": "Todos",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/exames",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"exames"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Cadastrar",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"exam\": \"EXAME\",\r\n  \"dtaHourExam\": \"01/01/2023 18:55:45\",\r\n  \"examType\": \"COVIX\",\r\n  \"urlFile\": \"http:..\",\r\n  \"result\": \"Negativo\",\r\n  \"iddoctor\": \"f6edb4c0-76c7-4113-9ea2-83e8fb849ae8\",\r\n  \"idpatient\": \"5b9717a5-4774-4b9b-bdde-bf742343d831\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/exames",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"exames"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Buscar por id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/exames/b4508f17-5b71-43f2-9274-24cd0f968d7e",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"exames",
+								"b4508f17-5b71-43f2-9274-24cd0f968d7e"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Buscar por Paciente",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/exames/a1dcea31-ca89-427a-a2cb-bca96973c587/pacientes",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"exames",
+								"a1dcea31-ca89-427a-a2cb-bca96973c587",
+								"pacientes"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Alterar Exame",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"exam\": \"EXAME 123123123\",\r\n  \"dtaHourExam\": \"01/12/2023 18:55:45\",\r\n  \"examType\": \"descansa 1111r\",\r\n  \"urlFile\": \"http:. 111111.\",\r\n  \"result\": \"neusa 1111111\",\r\n  \"iddoctor\": \"5aea1883-c22d-4d03-8b91-73dc007d2918\",\r\n  \"idpatient\": \"70345fa3-199f-4374-8885-f77b3ea65212\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/exames/b4508f17-5b71-43f2-9274-24cd0f968d7e",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"exames",
+								"b4508f17-5b71-43f2-9274-24cd0f968d7e"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Deletar",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/exames/a1681d14-7133-443d-a6db-ab5c5aa528b3",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"exames",
+								"a1681d14-7133-443d-a6db-ab5c5aa528b3"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "06 - Endereços",
+			"item": [
+				{
+					"name": "Todos",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/enderecos",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"enderecos"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Cadastrar",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n        \"idpatient\": \"bcee2f53-ac9f-4db6-b407-e5ae504830db\",\r\n        \"zipCode\":\"15600076\",\r\n        \"city\":\"Fernandópolis sppp\",\r\n        \"country\":\"Brasil 3333333\",\r\n        \"publicPlace\":\"Rua Pernanbuco\",\r\n        \"houseNumber\":\"2274\",\r\n        \"complement\":\"apto 93\",\r\n        \"district\":\"centro\",\r\n        \"landmark\":\"Edificio parati\"\r\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/enderecos",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"enderecos"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Buscar por id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/enderecos/f359eff6-0233-45f5-b0d5-889e3848fb041",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"enderecos",
+								"f359eff6-0233-45f5-b0d5-889e3848fb041"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Alterar Endereço",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"exam\": \"EXAME 123123123\",\r\n  \"dtaHourExam\": \"01/12/2023 18:55:45\",\r\n  \"examType\": \"descansa 1111r\",\r\n  \"urlFile\": \"http:. 111111.\",\r\n  \"result\": \"neusa 1111111\",\r\n  \"iddoctor\": \"5aea1883-c22d-4d03-8b91-73dc007d2918\",\r\n  \"idpatient\": \"70345fa3-199f-4374-8885-f77b3ea65212\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/enderecos/b4508f17-5b71-43f2-9274-24cd0f968d7e",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"enderecos",
+								"b4508f17-5b71-43f2-9274-24cd0f968d7e"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "07 - Estatistica",
+			"item": [
+				{
+					"name": "Estatistica",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/estatisticas",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"estatisticas"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
