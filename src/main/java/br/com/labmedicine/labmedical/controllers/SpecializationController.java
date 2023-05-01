@@ -3,6 +3,7 @@ package br.com.labmedicine.labmedical.controllers;
 import br.com.labmedicine.labmedical.dto.request.SpecializationRequest;
 import br.com.labmedicine.labmedical.dto.response.SpecializationResponse;
 import br.com.labmedicine.labmedical.services.SpecializationService;
+import jakarta.validation.Valid;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -26,7 +27,7 @@ public class SpecializationController {
     }
 
     @PostMapping
-    public ResponseEntity<SpecializationResponse> saveSpecialization(@RequestBody SpecializationRequest specializationRequest){
+    public ResponseEntity<SpecializationResponse> saveSpecialization(@Valid @RequestBody SpecializationRequest specializationRequest){
 
         return ResponseEntity.status(HttpStatus.OK).body(this.specializationService.save(specializationRequest));
 
@@ -40,7 +41,7 @@ public class SpecializationController {
 
     @PutMapping(path = "/{id}")
     public ResponseEntity<Optional<SpecializationResponse>> updateSpecialization(@PathVariable(name = "id")String id,
-                                                                                 @RequestBody SpecializationRequest specializationRequest){
+                                                                                 @Valid @RequestBody SpecializationRequest specializationRequest){
 
         return this.specializationService.update(id, specializationRequest);
     }

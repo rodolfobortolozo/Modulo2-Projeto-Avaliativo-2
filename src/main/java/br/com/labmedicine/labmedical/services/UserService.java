@@ -77,7 +77,7 @@ public class UserService {
 
                               User user = UserMapper.INSTANCE.reqtoUser(userRequest);
                               user.setId(id);
-                              user.setPassword(s.getPassword()); //Não Altera o password no update
+                              user.setPassword(s.getPassword());
                               User newUser = this.userRepository.save(user);
                               return UserMapper.INSTANCE.userToUserResponse(newUser);
 

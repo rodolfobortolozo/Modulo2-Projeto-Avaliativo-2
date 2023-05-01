@@ -40,7 +40,7 @@ public class PatientController {
 
   @PutMapping(path = "/{id}")
   public ResponseEntity<Optional<PatientResponse>> updatePatient(@PathVariable(name = "id") String id,
-                                                                 @Valid   @RequestBody PatientRequest patientRequest){
+                                                                 @Valid @RequestBody PatientRequest patientRequest){
 
     return this.patientService.update(id, patientRequest);
   }

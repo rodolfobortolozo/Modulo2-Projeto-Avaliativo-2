@@ -5,6 +5,7 @@ import br.com.labmedicine.labmedical.dto.request.PatientRequest;
 import br.com.labmedicine.labmedical.dto.response.ConsultResponse;
 import br.com.labmedicine.labmedical.dto.response.PatientResponse;
 import br.com.labmedicine.labmedical.services.ConsultService;
+import jakarta.validation.Valid;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -28,7 +29,7 @@ public class ConsultController {
   }
 
   @PostMapping
-  public ResponseEntity<ConsultResponse> saveConsult(@RequestBody ConsultRequest consultRequest){
+  public ResponseEntity<ConsultResponse> saveConsult(@Valid  @RequestBody ConsultRequest consultRequest){
 
     return this.consultService.save(consultRequest);
   }
@@ -41,7 +42,7 @@ public class ConsultController {
 
   @PutMapping(path = "/{id}")
   public ResponseEntity<Optional<ConsultResponse>> updateConsult(@PathVariable(name = "id") String id,
-                                       @RequestBody ConsultRequest consultRequest){
+                                                                 @Valid @RequestBody ConsultRequest consultRequest){
 
     return this.consultService.update(id, consultRequest);
   }

@@ -24,7 +24,6 @@ public abstract class Person {
   @Column(name = "GENDER")
   private String gender;
 
-
   @Column(name = "BIRTHDAY",nullable = false)
   private Date bithhDay;
 

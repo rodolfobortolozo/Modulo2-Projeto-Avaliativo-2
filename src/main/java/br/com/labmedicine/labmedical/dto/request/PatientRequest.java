@@ -4,6 +4,7 @@ import br.com.labmedicine.labmedical.models.Address;
 import br.com.labmedicine.labmedical.models.Allergy;
 import br.com.labmedicine.labmedical.models.CautionList;
 import com.fasterxml.jackson.annotation.JsonFormat;
+import jakarta.validation.constraints.NotEmpty;
 import lombok.Data;
 
 import java.util.Collection;
@@ -12,6 +13,7 @@ import java.util.Date;
 @Data
 public class PatientRequest extends PersonRequest{
 
+  @NotEmpty(message = "Telefone de Emergência Obrigatório")
   private String phoneEmergency;
 
   private String agreement;

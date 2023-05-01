@@ -3,6 +3,7 @@ package br.com.labmedicine.labmedical.controllers;
 import br.com.labmedicine.labmedical.dto.request.ExamRequest;
 import br.com.labmedicine.labmedical.dto.response.ExamResponse;
 import br.com.labmedicine.labmedical.services.ExamService;
+import jakarta.validation.Valid;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -26,7 +27,7 @@ public class ExamController {
   }
 
   @PostMapping
-  public ResponseEntity<ExamResponse> saveExam(@RequestBody ExamRequest examRequest){
+  public ResponseEntity<ExamResponse> saveExam(@Valid  @RequestBody ExamRequest examRequest){
 
     return this.examService.save(examRequest);
   }
@@ -39,7 +40,7 @@ public class ExamController {
 
   @PutMapping(path = "/{id}")
   public ResponseEntity<Optional<ExamResponse>> updateExam(@PathVariable(name = "id") String id,
-                                                                 @RequestBody ExamRequest examRequest){
+                                                           @Valid @RequestBody ExamRequest examRequest){
 
     return this.examService.update(id, examRequest);
   }
